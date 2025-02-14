@@ -18,9 +18,9 @@ jobs:
         steps:
             - uses: actions/checkout@main
             - uses: actions/setup-java@main
-                with:
-                    java-version: '17'
-                    distribution: 'temurin'
+              with:
+                java-version: '17'
+                distribution: 'temurin'
 
             - name: Setup Gradle
                 uses: gradle/actions/setup-gradle@main
