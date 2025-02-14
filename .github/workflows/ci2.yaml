@@ -23,9 +23,9 @@ jobs:
                 distribution: 'temurin'
 
             - name: Setup Gradle
-                uses: gradle/actions/setup-gradle@main
+              uses: gradle/actions/setup-gradle@main
             - name: Build with Gradle
-                run: ./gradlew build
+              run: ./gradlew build
 
     code-quality:
         name: Ad_Service_Code_Quality
@@ -35,8 +35,8 @@ jobs:
             - uses: actions/checkout@main
             - uses: actions/setup-java@main
                 with:
-                java-version: '17'
-                distribution: 'temurin'
+                    java-version: '17'
+                     distribution: 'temurin'
 
             - name: Setup Gradle
                 uses: gradle/actions/setup-gradle@main
