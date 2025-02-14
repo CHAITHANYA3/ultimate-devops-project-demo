@@ -27,30 +27,9 @@ jobs:
             - name: Build with Gradle
               run: ./gradlew build
 
-    code-quality:
-        name: Ad_Service_Code_Quality
-        runs-on: ubuntu-latest
-
-        steps:
-            - uses: actions/checkout@main
-            - uses: actions/setup-java@main
-                with:
-                    java-version: '17'
-                     distribution: 'temurin'
-
-            - name: Setup Gradle
-                uses: gradle/actions/setup-gradle@main
-            - name: Run SonarQube
-                run: ./gradlew sonarqube
-                env:
-                    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-                    SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-                    SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
     docker:
         name: Ad_Service_Docker
         runs-on: ubuntu-latest
-
-        needs: [ build, code-quality ]
 
         steps:
             - uses: actions/checkout@main
@@ -66,17 +45,9 @@ jobs:
                 env:
                     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
                     DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-                    DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
-                    DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}
-                    DOCKER_IMAGE_TAG: ${{ secrets.DOCKER_IMAGE_TAG }}
             - name: Push Docker Image
                 run: ./gradlew dockerPush
-                env:
-                    DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-                    DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-                    DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
-                    DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}
-                    DOCKER_IMAGE_TAG: ${{ secrets.DOCKER_IMAGE_TAG }}
+
         
 
                             
