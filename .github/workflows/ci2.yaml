@@ -23,7 +23,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@main
         with:
-          gradle-version: 'v8.12.1'                
+          gradle-version: '8.12.1'                
       - name: Build
         run: |
           cd src/ad
