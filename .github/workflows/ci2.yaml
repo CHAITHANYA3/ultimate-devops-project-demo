@@ -29,15 +29,15 @@ jobs:
           cd src/ad
           sudo mkdir /usr/src/app/
           echo path: $PWD
-          cp gradlew* settings.gradle* build.gradle /usr/src/app/
-          cp ./gradle ./gradle
-          chmod +x ./gradlew
-          ./gradlew
-          ./gradlew downloadRepos
-          cp .  .
-          cp ./pb ./proto
-          chmod +x ./gradlew
-          ./gradlew installDist -PprotoSourceDir=./proto
+          sudo cp gradlew* settings.gradle* build.gradle /usr/src/app/
+          sudo cp ./gradle ./gradle
+          sudo chmod +x ./gradlew
+          sudo ./gradlew
+          sudo ./gradlew downloadRepos
+          sudo cp .  .
+          sudo cp ./pb ./proto
+          sudo chmod +x ./gradlew
+          sudo ./gradlew installDist -PprotoSourceDir=./proto
 
   docker:
     runs-on: ubuntu-latest
