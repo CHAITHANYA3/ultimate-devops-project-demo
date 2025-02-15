@@ -9,8 +9,7 @@ on:
     branches:
       - main
 jobs:
-    build:          #job name
-        name: Ad_Service_CI
+    build:          
         runs-on: ubuntu-latest
 
         steps:
