@@ -25,14 +25,10 @@ jobs:
                       
       - name: Build
         run: |
-          cd src/ad
-          sudo mkdir /usr/src/app/
-          echo path: $PWD
+          cd src/ad          
           gradle -v
           ./gradlew clean 
           gradle wrapper --gradle-version=8.12.1
-          sudo cp -r gradlew* settings.gradle* build.gradle /usr/src/app/
-          sudo cp -r ./gradle /usr/src/app/
           sudo chmod +x ./gradlew
           sudo ./gradlew build --no-daemon --warning-mode all
           sudo ./gradlew downloadRepos
