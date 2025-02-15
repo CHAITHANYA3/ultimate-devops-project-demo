@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: |
           cd src/ad
-          ./gradlew installDist -PprotoSourceDir=./proto
+          gradle build
 
   docker:
     runs-on: ubuntu-latest
