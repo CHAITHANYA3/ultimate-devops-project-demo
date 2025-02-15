@@ -25,15 +25,18 @@ jobs:
         with:
           gradle-version: '8.12.1'                
       - name: Build
+          with:
+
         run: |
           cd src/ad
+          mkdir /usr/src/app/
           echo path: $PWD
-          cp gradlew gradlew.bat settings.gradle build.gradle ./
+          cp gradlew* settings.gradle* build.gradle /usr/src/app/
           cp ./gradle ./gradle
           chmod +x ./gradlew
           ./gradlew
           ./gradlew downloadRepos
-          cp . .
+          cp .  .
           cp ./pb ./proto
           chmod +x ./gradlew
           ./gradlew installDist -PprotoSourceDir=./proto
