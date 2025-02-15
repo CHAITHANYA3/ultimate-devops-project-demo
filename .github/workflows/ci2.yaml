@@ -22,8 +22,19 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-      - name: Build with Gradle
-        run: ./gradlew -b ci.gradle package
+      
+      - name: Build
+        run: 
+          cd src/ad
+          gradlew* settings.gradle* build.gradle .
+          ./gradle ./gradle
+          chmod +x ./gradlew
+          ./gradlew
+          ./gradlew downloadRepos
+          . .
+          ./pb ./proto
+          chmod +x ./gradlew
+          ./gradlew installDist -PprotoSourceDir=./proto
 
   docker:
     runs-on: ubuntu-latest
