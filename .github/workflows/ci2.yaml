@@ -29,11 +29,13 @@ jobs:
           sudo apt install openjdk-21-jdk -y
           java -version
           javac -version
+          echo $JAVA_HOME
+          ./gradlew --version
           cd src/ad          
           gradle -v
           gradle wrapper --gradle-version=8.12.1
           sudo chmod +x ./gradlew
-          sudo ./gradlew clean build --no-daemon --warning-mode all
+          sudo ./gradlew clean build --no-daemon --warning-mode all -Dorg.gradle.java.home=/usr/lib/jvm/java-21-openjdk-amd64  --stacktrace
           sudo ./gradlew downloadRepos
           sudo cp -r ./pb ./proto
           sudo chmod +x ./gradlew
