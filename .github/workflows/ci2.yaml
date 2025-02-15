@@ -28,7 +28,7 @@ jobs:
           cd src/ad
           sudo mkdir /usr/src/app/
           echo path: $PWD
-          echo gradle version: $gradle -v
+          gradle -v
           sudo cp -r gradlew* settings.gradle* build.gradle /usr/src/app/
           sudo cp -r ./gradle /usr/src/app/
           sudo chmod +x ./gradlew
