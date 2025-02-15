@@ -25,12 +25,15 @@ jobs:
                       
       - name: Build
         run: |
+          sudo apt update
+          sudo apt install openjdk-21-jdk -y
+          java -version
+          javac -version
           cd src/ad          
           gradle -v
-          ./gradlew clean 
           gradle wrapper --gradle-version=8.12.1
           sudo chmod +x ./gradlew
-          sudo ./gradlew build --no-daemon --warning-mode all
+          sudo ./gradlew clean build --no-daemon --warning-mode all
           sudo ./gradlew downloadRepos
           sudo cp -r ./pb ./proto
           sudo chmod +x ./gradlew
