@@ -25,12 +25,9 @@ jobs:
                       
       - name: Build
         run: |
-          sudo apt update
-          sudo apt install openjdk-21-jdk -y
           java -version
           javac -version
           echo $JAVA_HOME
-          ./gradlew --version
           cd src/ad          
           gradle -v
           gradle wrapper --gradle-version=8.12.1
