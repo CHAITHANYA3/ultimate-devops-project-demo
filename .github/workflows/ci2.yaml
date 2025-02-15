@@ -62,6 +62,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ad:${{github.run_id}}
 
+          
 
        
 
