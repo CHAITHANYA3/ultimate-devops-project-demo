@@ -28,7 +28,8 @@ jobs:
         run: |
           cd src/ad
           echo path: $PWD
-          cp gradlew* settings.gradle* build.gradle .
+          cp gradlew* build.gradle .
+          cp settings.gradle* build.gradle .
           cp ./gradle ./gradle
           chmod +x ./gradlew
           ./gradlew
