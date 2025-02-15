@@ -29,6 +29,7 @@ jobs:
           sudo mkdir /usr/src/app/
           echo path: $PWD
           gradle -v
+          gradle wrapper --gradle-version=8.12.1 --warning-mode=(all,fail,none,summary)
           sudo cp -r gradlew* settings.gradle* build.gradle /usr/src/app/
           sudo cp -r ./gradle /usr/src/app/
           sudo chmod +x ./gradlew
