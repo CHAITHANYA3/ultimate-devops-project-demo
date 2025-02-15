@@ -29,7 +29,6 @@ jobs:
           sudo mkdir /usr/src/app/
           echo path: $PWD
           gradle -v
-          gradlew -v
           ./gradlew clean 
           gradle wrapper --gradle-version=8.12.1
           sudo cp -r gradlew* settings.gradle* build.gradle /usr/src/app/
