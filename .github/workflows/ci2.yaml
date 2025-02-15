@@ -30,11 +30,9 @@ jobs:
           echo path: $PWD
           gradlew* settings.gradle* build.gradle 
           cp ./gradle ./gradle
-        run: |
           chmod +x ./gradlew
           ./gradlew
           ./gradlew downloadRepos
-        run: |
           cp . .
           cp ./pb ./proto
           chmod +x ./gradlew
