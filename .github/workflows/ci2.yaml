@@ -30,7 +30,7 @@ jobs:
           sudo mkdir /usr/src/app/
           echo path: $PWD
           sudo cp -r gradlew* settings.gradle* build.gradle /usr/src/app/
-          sudo cp -r ./gradle ./usr/src/app/
+          sudo cp -r ./gradle /usr/src/app/
           sudo chmod +x ./gradlew
           sudo ./gradlew
           sudo ./gradlew downloadRepos
