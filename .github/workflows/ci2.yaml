@@ -24,7 +24,7 @@ jobs:
         uses: gradle/actions/setup-gradle@main
       
       - name: Build
-        run: 
+        run: |
           cd src/ad
           ./gradlew installDist -PprotoSourceDir=./proto
 
