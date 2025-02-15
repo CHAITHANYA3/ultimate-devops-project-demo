@@ -32,7 +32,7 @@ jobs:
           gradle -v
           gradle wrapper --gradle-version=8.12.1
           sudo chmod +x ./gradlew
-          sudo ./gradlew clean build --no-daemon --warning-mode all -Dorg.gradle.java.home=/usr/lib/jvm/java-21.0.6-openjdk-amd64  --stacktrace
+          sudo ./gradlew clean build --warning-mode all  --stacktrace
           sudo ./gradlew downloadRepos
           sudo cp -r ./pb ./proto
           sudo chmod +x ./gradlew
