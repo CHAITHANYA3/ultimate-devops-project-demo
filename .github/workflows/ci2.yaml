@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: |
           cd src/ad
-          mkdir /usr/src/app/
+          sudo mkdir /usr/src/app/
           echo path: $PWD
           cp gradlew* settings.gradle* build.gradle /usr/src/app/
           cp ./gradle ./gradle
