@@ -29,13 +29,13 @@ jobs:
           cd src/ad
           sudo mkdir /usr/src/app/
           echo path: $PWD
-          sudo cp gradlew* settings.gradle* build.gradle /usr/src/app/
-          sudo cp ./gradle ./gradle
+          sudo cp -r gradlew* settings.gradle* build.gradle /usr/src/app/
+          sudo cp -r ./gradle ./gradle
           sudo chmod +x ./gradlew
           sudo ./gradlew
           sudo ./gradlew downloadRepos
           sudo cp .  .
-          sudo cp ./pb ./proto
+          sudo cp -r ./pb ./proto
           sudo chmod +x ./gradlew
           sudo ./gradlew installDist -PprotoSourceDir=./proto
 
